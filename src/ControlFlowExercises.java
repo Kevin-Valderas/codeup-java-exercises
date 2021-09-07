@@ -53,30 +53,59 @@ public class ControlFlowExercises {
 //        }
 
         /*3.0.0*/
+//        Scanner integer = new Scanner(System.in);
+//        Scanner response = new Scanner(System.in);
+//        boolean confirm;
+//        do{
+//        System.out.print("What number would you like to go up to? " );
+//        int userInput = integer.nextInt();
+//        String tableStart = """
+//                Here is your table!
+//
+//                number | squared | cubed
+//                ------ | ------- | -----
+//                """;
+//        System.out.println(tableStart);
+//        for (int i = 1; i <= userInput; i++) {
+//            int square = (int) Math.pow(i, 2);
+//            int cube = (int) Math.pow(i, 3);
+//            System.out.print(i + "      | " + square + "       | " + cube + "\n");
+//            }
+//        System.out.println("Do you want to go again? ");
+//        String userResponse = response.next();
+//        if(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("y")){
+//            confirm = true;
+//        } else {
+//            confirm = false;
+//        }
+//        }while(confirm);
+        /*4.0.0*/
         Scanner integer = new Scanner(System.in);
         Scanner response = new Scanner(System.in);
         boolean confirm;
         do{
-        System.out.print("What number would you like to go up to? " );
-        int userInput = integer.nextInt();
-        String tableStart = """
-                Here is your table!
-
-                number | squared | cubed
-                ------ | ------- | -----
-                """;
-        System.out.println(tableStart);
-        for (int i = 1; i <= userInput; i++) {
-            int square = (int) Math.pow(i, 2);
-            int cube = (int) Math.pow(i, 3);
-            System.out.print(i + "      | " + square + "       | " + cube + "\n");
+            System.out.print("Enter a grade from 0 - 100. \n" );
+            int userInput = integer.nextInt();
+            if (userInput <= 59){
+                System.out.print("F");
+            }else if (60 <= userInput && userInput <= 66){
+                System.out.print("D");
+            }else if (67 <= userInput && userInput <= 79){
+                System.out.print("C");
+            }else if (80 <= userInput && userInput <= 87){
+                System.out.print("B");
+            }else if (88 <= userInput && userInput <= 100){
+                System.out.print("A");
+            }else{
+                break;
             }
-        System.out.println("Do you want to go again? ");
-        String userResponse = response.next();
-        if(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("y")){
+            System.out.println("\nContinue? ");
+            String userResponse = response.next();
+            if(userResponse.equalsIgnoreCase("yes") || userResponse.equalsIgnoreCase("y")){
             confirm = true;
-        } else {
+             } else {
             confirm = false;
-        }
-        }while(confirm);
-    }}
+             }
+            }while(confirm);
+    }
+}
