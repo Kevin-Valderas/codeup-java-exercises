@@ -11,12 +11,13 @@ public class MethodsExercises {
             System.out.print("Enter the second integer: ");
             int y = numScan.nextInt();
             Scanner choice = new Scanner(System.in);
-            System.out.println("Choose from the following: addition, subtraction, multiplication, division\n ");
+            System.out.println("Choose from the following: addition, subtraction, multiplication, division, modulus\n ");
             String chosenMethod = choice.nextLine();
             int sum = x + y;
             int difference = x - y;
             int product = x * y;
             int quotient = x / y;
+            int remainder = x % y;
             Integer solution = null;
             if (chosenMethod.equalsIgnoreCase("addition")){
                 solution = sum;
@@ -26,6 +27,8 @@ public class MethodsExercises {
                 solution = product;
             } else if (chosenMethod.equalsIgnoreCase("division")){
                 solution = quotient;
+            }else if (chosenMethod.equalsIgnoreCase("modulus")){
+                solution = remainder;
             }
             System.out.println("Using " + chosenMethod + ", your answer is: " + solution);
             System.out.println("\nContinue? ");
