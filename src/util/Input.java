@@ -19,17 +19,23 @@ public class Input {
     public int getInt(int min, int max) {
         String prompt = "Enter an integer between " + min + " and " + max;
         System.out.println(prompt);
-        int userInput = scanner.nextInt();
-        while (userInput <= min || userInput >= max) {
-            System.out.println(prompt);
-            userInput = scanner.nextInt();
+        int input;
+        String s = getString();
+        try {
+            input = Integer.parseInt(s);
+            return input;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Not a number");
+            return getInt(min, max);
         }
-        return userInput;
     }
+
 
     public double getDouble(){
         System.out.println("Enter a number:");
-        return scanner.nextDouble();
+//        return scanner.nextDouble();
+        return Double.parseDouble(getString());
     }
 
     public Input(){
